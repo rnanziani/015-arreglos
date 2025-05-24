@@ -119,3 +119,55 @@ body {
     flex: 1;
   }
 }
+
+/* Estilos para el footer y redes sociales */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  color: #4da3dd;
+}
+
+/* Estilos específicos para cada red social */
+.fa-facebook-f:hover {
+  color: #1877f2;
+}
+
+.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+.fa-instagram:hover {
+  color: #e4405f;
+}
+
+.fa-linkedin-in:hover {
+  color: #0077b5;
+}
+
+/* Ajuste para pantallas más grandes */
+@media (min-width: 576px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
