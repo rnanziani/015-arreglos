@@ -1,0 +1,36 @@
+const listInvitados = document.querySelector("#invitados");
+const invitadoInput = document.querySelector("#nuevoInvitado");
+const agregarBtn = document.querySelector("#agregarInvitado");
+
+const invitados = [
+{id: 1, nombre: "Juan"},
+{id: 2, nombre: "Pedro"},
+{id: 3, nombre: "Maria"},
+{id: 4, nombre: "Ana"},
+{id: 5, nombre: "Luis"},
+]
+
+agregarBtn.addEventListener("click", function() {
+const nuevoInvitado = invitadoInput.value.trim();
+invitados.push({id: Date.now(), nombre: nuevoInvitado});
+invitadoInput.value = "";
+
+let html = "";
+for (let i = 0; i < invitados.length; i++) {
+html += `<li>${invitados[i].nombre}</li>`;
+}
+listInvitados.innerHTML = html;
+});
+
+
+function borrar(id) {
+const index = invitados.findIndex(invitado => invitado.id === id);
+if (index !== -1) {
+invitados.splice(index, 1);
+}
+let html = "";
+for (let i = 0; i < invitados.length; i++) {
+html += `<li>${invitados[i].nombre} <button onclick="borrar(${invitados[i].id})">Eliminar</button></li> `;
+}
+listInvitados.innerHTML = html;
+}
